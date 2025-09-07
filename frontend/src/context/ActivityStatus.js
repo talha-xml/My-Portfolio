@@ -1,4 +1,3 @@
-// src/context/ActivityStatus.js
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
@@ -11,7 +10,7 @@ export const ActivityProvider = ({ children }) => {
 
   const [isActive, setIsActive] = useState(true);
   const [showWarning, setShowWarning] = useState(false);
-  const [countdown, setCountdown] = useState(10); // countdown seconds
+  const [countdown, setCountdown] = useState(10); 
 
   useEffect(() => {
     if (!user) return;
@@ -27,16 +26,14 @@ export const ActivityProvider = ({ children }) => {
       clearTimeout(inactivityTimer);
       clearInterval(countdownTimer);
 
-      // Start 5-second inactivity timer
       inactivityTimer = setTimeout(() => {
         setShowWarning(true);
 
-        // Start 10-second countdown
         countdownTimer = setInterval(() => {
   setCountdown((prev) => {
     if (prev <= 1) {
       clearInterval(countdownTimer);
-      setShowWarning(false); // ✅ hide popover
+      setShowWarning(false);
       logout();
       navigate("/login");
       return 0;
@@ -51,7 +48,7 @@ export const ActivityProvider = ({ children }) => {
     const events = ["mousemove", "keydown", "scroll", "touchstart"];
     events.forEach((event) => window.addEventListener(event, resetTimers));
 
-    resetTimers(); // initialize
+    resetTimers(); 
 
     return () => {
       clearTimeout(inactivityTimer);
@@ -72,8 +69,8 @@ export const ActivityProvider = ({ children }) => {
             left: 0,
             width: "100vw",
             height: "100vh",
-            background: "rgba(0,0,0,0.5)", // dim background
-            backdropFilter: "blur(2px)", // optional blur for realism
+            background: "rgba(0,0,0,0.5)", 
+            backdropFilter: "blur(2px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -100,6 +97,4 @@ export const ActivityProvider = ({ children }) => {
     </ActivityContext.Provider>
   );
 };
-
-// custom hook
 export const useActivity = () => useContext(ActivityContext);
