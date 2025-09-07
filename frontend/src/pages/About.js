@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from "react";
 import "../styles/About.css";
 
 function About() {
-  // Wrap in useMemo so it doesn’t get re-created every render
   const sections = useMemo(() => [
     {
       heading: "Name",
@@ -28,9 +27,8 @@ function About() {
       content:
         "I aim to become a passionate software engineer providing best services related to full-stack development, AI and ML solutions, and cloud services and solve real world problems with continuous learning."
     },
-  ], []); // 👈 empty deps → stays constant across renders
+  ], []); 
 
-  // Typing effect state
   const [displayedText, setDisplayedText] = useState([""]);
   const [currentSection, setCurrentSection] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
