@@ -60,7 +60,6 @@ function Skills() {
     <div className="skills-page">
       <div className="skills-services-wrapper">
         
-        {/* My Skills Section */}
         <div className="skills-section">
           <h1><u>My Skills</u></h1>
           <div className="skills-grid">
@@ -77,7 +76,6 @@ function Skills() {
           </div>
         </div>
 
-        {/* My Services Section */}
         <div className="services-section">
           <h1><u>My Services</u></h1>
           <div className="services-grid">
@@ -98,6 +96,4 @@ function Skills() {
     </div>
   );
 }
-
 export default Skills;
-
