@@ -1,5 +1,3 @@
-# Auth_DB_LOGIC/signup_logic.py
-
 from flask import Blueprint, request, jsonify
 import psycopg2
 import re
@@ -9,17 +7,13 @@ from config import Config
 
 signup_bp = Blueprint("signup", __name__)
 
-# ===================== VALIDATION HELPERS =====================
 def validate_full_name(full_name):
-    # Allow letters, spaces, hyphens, 2-50 characters
     return re.match(r"^[A-Za-z\s\-]{2,50}$", full_name)
 
 def validate_username(username):
-    # Must start with letter, 3-30 characters, letters/numbers/underscore
     return re.match(r"^[A-Za-z][A-Za-z0-9_]{2,29}$", username)
 
 def validate_password(password):
-    # Min 8 chars, at least one uppercase, one lowercase, one number, one special char
     return (
         len(password) >= 8
         and re.search(r"[A-Z]", password)
@@ -28,7 +22,6 @@ def validate_password(password):
         and re.search(r"[!@#$%^&*(),.?\":{}|<>]", password)
     )
 
-# ===================== SIGNUP ROUTE =====================
 @signup_bp.route("/signup", methods=["POST"])
 def signup():
     data = request.get_json(force=True)
@@ -38,7 +31,6 @@ def signup():
     email = (data.get("email") or "").strip()
     password = (data.get("password") or "").strip()
 
-    # ===================== VALIDATION =====================
     if not full_name or not username or not email or not password:
         return jsonify({"error": "All fields are required"}), 400
 
@@ -53,7 +45,6 @@ def signup():
 
     hashed_pw = generate_password_hash(password)
 
-    # ===================== DATABASE INSERT =====================
     try:
         conn = psycopg2.connect(Config.DATABASE_URL)
         cur = conn.cursor()
@@ -72,7 +63,5 @@ def signup():
         return jsonify({"error": "Email or username already exists ❌"}), 409
 
     except Exception as e:
-        # Catch all other DB or server errors
         print("Signup Error:", e)
         return jsonify({"error": f"Server error: {str(e)}"}), 500
-
