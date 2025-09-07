@@ -5,7 +5,6 @@ const MouseTrail = () => {
     const handleMouseMove = (e) => {
       const trail = document.createElement("div");
 
-      // CSS-in-JS style
       Object.assign(trail.style, {
         position: "fixed",
         left: `${e.clientX}px`,
@@ -22,12 +21,10 @@ const MouseTrail = () => {
 
       document.body.appendChild(trail);
 
-      // Animate fade out
       setTimeout(() => {
         trail.style.opacity = "0";
       }, 50);
 
-      // Remove element after transition
       setTimeout(() => {
         trail.remove();
       }, 400);
@@ -38,7 +35,7 @@ const MouseTrail = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  return null; // no JSX needed
+  return null; 
 };
 
 export default MouseTrail;
