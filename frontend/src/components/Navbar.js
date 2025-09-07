@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";  // ✅ import
+import { AuthContext } from "../context/AuthContext"; 
 import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout } = useContext(AuthContext);  // ✅ access auth state
+  const { user, logout } = useContext(AuthContext);  
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -27,7 +27,6 @@ function Navbar() {
         <Link to="/skills" onClick={() => setIsOpen(false)}>Skills</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
 
-        {/* ✅ Show Profile + Logout only if user is logged in */}
         {user ? (
           <>
             <span className="nav-separator">|</span>
@@ -40,7 +39,6 @@ function Navbar() {
           </>
         )}
       </div>
-
       <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
@@ -49,6 +47,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;
-
