@@ -5,7 +5,6 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 const Home = () => {
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <div className="hero">
         <div className="hero-left">
           <img
@@ -32,7 +31,6 @@ const Home = () => {
             tech world.
           </p>
 
-          {/* Social Icons */}
           <div className="social-icons">
             <a
               href="https://www.linkedin.com/in/m-talha-faizan-46158532a/"
