@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";  // ✅ import
+import { AuthContext } from "../context/AuthContext";  
 import "../styles/Login.css";
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
   const [formData, setFormData] = useState({ identifier: "", password: "" });
 
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);  // ✅ get login function
+  const { login } = useContext(AuthContext);  
 
   const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);
 
@@ -37,7 +37,6 @@ function Login() {
       } else if (data.message && data.user) {
         setSuccess(data.message);
 
-        // ✅ use context to log in
         login(data.user, data.token);
 
         setTimeout(() => {
@@ -45,7 +44,7 @@ function Login() {
         }, 1000);
       }
     } catch (err) {
-      setError("⚠️ Unable to connect to the server. Please try again later.");
+      setError("Unable to connect to the server. Please try again later.");
     }
   };
 
