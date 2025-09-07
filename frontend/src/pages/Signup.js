@@ -26,13 +26,13 @@ function Signup() {
     const confirmPassword = e.target.confirmPassword.value.trim();
 
     if (!fullName || !username || !email || !password || !confirmPassword) {
-      setError("⚠️ Please fill in all fields.");
+      setError("Please fill in all fields.");
       setSuccess("");
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("❌ Passwords do not match.");
+      setError("Passwords do not match.");
       setSuccess("");
       return;
     }
@@ -55,15 +55,15 @@ function Signup() {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || "⚠️ Something went wrong.");
+        setError(data.error || "Something went wrong.");
         setSuccess("");
       } else {
-        setSuccess(data.message || "✅ Signup successful!");
+        setSuccess(data.message || "Signup successful!");
         setError("");
         e.target.reset();
       }
     } catch (err) {
-      setError("⚠️ Server not reachable.");
+      setError("Server not reachable.");
       setSuccess("");
       console.error(err);
     }
@@ -71,7 +71,6 @@ function Signup() {
 
   return (
     <div className="signup-page">
-      {/* Sticky Note on the LEFT */}
       <div className="signup-guidelines">
         <h3>📌 Guidelines</h3>
         <ul>
@@ -87,16 +86,13 @@ function Signup() {
         </ul>
       </div>
 
-      {/* Signup Container */}
       <div className="signup-container">
         <h1>Sign Up</h1>
 
-        {/* Info Card */}
         <div className="signup-info-card">
           No need to create an account! This is only for Fullstack practice purposes. But, if you want to see additional of my work, by creating an account, you will be redirected to your Profile.
         </div>
 
-        {/* Error / Success Messages */}
         {error && <div className="signup-error">{error}</div>}
         {success && <div className="signup-success">{success}</div>}
 
@@ -105,7 +101,6 @@ function Signup() {
           <input type="text" name="username" placeholder="Username" className="signup-input" />
           <input type="email" name="email" placeholder="Email" className="signup-input" />
 
-          {/* Password Field */}
           <div className="password-wrapper">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -118,7 +113,6 @@ function Signup() {
             </button>
           </div>
 
-          {/* Confirm Password Field */}
           <div className="password-wrapper">
             <input
               type={confirmPasswordVisible ? "text" : "password"}
@@ -142,6 +136,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;
-
