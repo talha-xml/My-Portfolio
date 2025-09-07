@@ -1,0 +1,64 @@
+/* About.css */
+
+/* Page background */
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff, #c7d2fe);
+  /* soft indigo gradient */
+}
+
+/* Main container */
+.about-container {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffffcc; /* semi-transparent white */
+  backdrop-filter: blur(6px); /* glass effect */
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* About heading */
+.about-container h1 {
+  font-size: 2.2rem;
+  color: #1e1b4b;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Content area */
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #374151;
+}
+
+/* Headings inside paragraphs (e.g., Name, Introduction, etc.) */
+.about-content .heading {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #4f46e5; /* Indigo shade */
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Smooth fade-in for container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

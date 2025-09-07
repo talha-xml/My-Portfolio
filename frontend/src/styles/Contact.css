@@ -1,0 +1,186 @@
+/* ========================= */
+/* PAGE & BODY LAYOUT */
+/* ========================= */
+body {
+  background: linear-gradient(135deg, #d7febd, #7096e1);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* ========================= */
+/* CONTACT PAGE CONTAINER */
+/* ========================= */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+/* ========================= */
+/* PAGE HEADING */
+/* ========================= */
+.contact-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #333333;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* ========================= */
+/* CONTACT FORM CONTAINER */
+/* ========================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95); /* glassy effect */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* ========================= */
+/* INPUTS & TEXTAREA STYLES */
+/* ========================= */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  background: #fff;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: #0073e6;
+  box-shadow: 0 0 12px rgba(0, 115, 230, 0.3);
+  transform: scale(1.02);
+}
+
+/* Larger Textarea */
+.contact-textarea {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* ========================= */
+/* SUBMIT BUTTON */
+/* ========================= */
+.contact-submit {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #175ba0, #5cadc3);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;}
+
+.contact-submit:hover {
+  background: linear-gradient(135deg, #005bb5, #0096c7);
+}
+
+/* ========================= */
+/* EMAIL NOTE & LINKS */
+/* ========================= */
+.contact-email-note {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.contact-email-note a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contact-email-note a:hover {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+/* ========================= */
+/* WORD COUNT */
+/* ========================= */
+.word-count {
+  text-align: left;
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* ========================= */
+/* KEYFRAMES FOR ANIMATIONS */
+/* ========================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) translateY(-3px); }
+  50% { transform: scale(1.05) translateY(-5px); }
+  100% { transform: scale(1) translateY(-3px); }
+}
+
+/* ========================= */
+/* RESPONSIVENESS */
+/* ========================= */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .contact-submit {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .contact-email-note {
+    font-size: 1.1rem;
+  }
+}

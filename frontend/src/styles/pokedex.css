@@ -1,0 +1,87 @@
+body {
+  background-color: #ef5350;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.pokedex-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff3e0;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.pokedex-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d32f2f;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #d32f2f;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 8px 12px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #b71c1c;
+}
+
+.loading {
+  color: #1565c0;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.pokemon-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ef5350;
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+}
+
+.pokemon-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pokemon-card li {
+  text-transform: capitalize;
+}

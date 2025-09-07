@@ -1,0 +1,15 @@
+/* src/styles/Footer.css */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #20232a;  /* React theme blue */
+  color:  #61dafb; /* React dark theme text */
+  margin-top: auto;
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+

@@ -1,0 +1,176 @@
+/* ============================ */
+/* Skills & Services Page       */
+/* ============================ */
+
+.skills-page {
+  padding: 80px 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wrapper */
+.skills-services-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Sections */
+.skills-section, .services-section {
+  width: 100%;
+}
+
+/* ============================ */
+/* Headings Animation           */
+/* ============================ */
+.skills-section h1,
+.services-section h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 0.8s ease forwards;
+}
+
+/* Heading Keyframes */
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid Layout */
+.skills-grid, .services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  justify-items: center;
+}
+
+/* ============================ */
+/* Card Styling with Animation  */
+/* ============================ */
+.skill-card, .service-card {
+background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.15), /* very light black */
+    rgba(0, 0, 0, 0.25)  /* slightly darker but still light */
+  );
+  padding: 20px 18px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 220px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Card Hover */
+.skill-card:hover, .service-card:hover {
+  background: #2a2a40; /* slightly lighter on hover */
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Card Keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Content */
+.skill-card img, .service-card img {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px auto;
+}
+
+.skill-card h2, .service-card h2 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.skill-description, .service-description {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Learn More Links */
+.skill-card a,
+.service-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.skill-card a:hover,
+.service-card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ============================ */
+/* Responsiveness               */
+/* ============================ */
+@media (max-width: 1100px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-section h1,
+  .services-section h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-section h1,
+  .services-section h1 {
+    font-size: 1.8rem;
+  }
+}
+
