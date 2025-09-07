@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -19,7 +18,7 @@ function App() {
     <>
       <AuthProvider>
         <Router>
-          <ActivityProvider timeout={30000}> {/* 30 seconds inactivity */}
+          <ActivityProvider timeout={30000}> 
             <div className="app-container">
               <Navbar />
               <div className="page-content">
