@@ -27,7 +27,6 @@ function Profile() {
   const [status, setStatus] = useState("Active");
   const idleTimer = useRef(null);
 
-  // ✅ Idle status tracking
   useEffect(() => {
     const resetTimer = () => {
       setStatus("Active");
@@ -48,7 +47,6 @@ function Profile() {
     };
   }, []);
 
-  // ✅ Fetch stock + currency
   useEffect(() => {
     Promise.all([
       fetch("http://127.0.0.1:5000/api/stock").then((res) => res.json()),
@@ -71,7 +69,6 @@ function Profile() {
       .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
-  // ✅ Keep persisted user in sync with context
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
@@ -88,7 +85,7 @@ function Profile() {
 
   const handleLogout = () => {
     logout();
-    localStorage.removeItem("user"); // ✅ clear persistence
+    localStorage.removeItem("user");
     navigate("/login");
   };
 
@@ -99,7 +96,6 @@ function Profile() {
         <p><strong>Name:</strong> {activeUser.full_name}</p>
         <p><strong>Registered Email:</strong> {activeUser.email}</p>
 
-        {/* ================= USER ACTIVITY STATUS ================= */}
         <table className="user-table" style={{ marginTop: "20px" }}>
           <thead>
             <tr>
@@ -127,7 +123,6 @@ function Profile() {
         </button>
       </div>
 
-      {/* ================= DASHBOARDS ================= */}
       <div className="dashboard-container">
         <div className="dashboard-section">
           <h2>Stock Market</h2>
@@ -153,7 +148,6 @@ function Profile() {
         </div>
       </div>
 
-      {/* ================= PROFILE NOTE ================= */}
       <div className="profile-note">
         <p>
           Thank you for creating an account on my portfolio.  
