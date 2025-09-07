@@ -6,5 +6,7 @@ and features a complete CRUD-based database system.
 
 ## TECH STACK
 Frontend -> React.js + CSS3
+
 Backend -> Flask + RestFUL API
+
 Database -> PostgreSQL 
