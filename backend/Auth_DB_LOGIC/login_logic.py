@@ -1,5 +1,3 @@
-# Auth_DB_LOGIC/login_logic.py
-
 from flask import Blueprint, request, jsonify
 import psycopg2
 from werkzeug.security import check_password_hash
@@ -19,7 +17,6 @@ def login():
         if not identifier or not password:
             return jsonify({"error": "Email and password are required ⚠️"}), 400
 
-        # Connect to database
         conn = psycopg2.connect(Config.DATABASE_URL)
         cur = conn.cursor()
         cur.execute(
@@ -38,10 +35,9 @@ def login():
         if not check_password_hash(hashed_password, password):
             return jsonify({"error": "Incorrect password ❌"}), 401
 
-        # ✅ Create real JWT token
         access_token = create_access_token(
             identity={"username": username, "email": email, "full_name": full_name},
-            expires_delta=timedelta(hours=2)  # token valid for 2 hours
+            expires_delta=timedelta(hours=2)
         )
 
         return jsonify({
