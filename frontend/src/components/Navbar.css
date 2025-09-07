@@ -22,10 +22,9 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* On hover – animate gradient */
 .navbar-logo a:hover {
-  background-position: right center; /* shifts gradient */
-  transform: scale(1.1); /* slight zoom */
+  background-position: right center; 
+  transform: scale(1.1); 
 }
 
 .navbar-links {
@@ -42,12 +41,11 @@
   transition: color 0.3s ease-in-out;
 }
 
-/* Underline effect */
 .navbar-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; /* adjust spacing below text */
+  bottom: -4px; 
   width: 0%;
   height: 2px;
   background-color: #61dafb;
@@ -62,21 +60,18 @@
   width: 100%;
 }
 
-/* Separator between items */
 .nav-separator {
   color: #61dafb;
   margin: 0 10px;
   font-weight: bold;
 }
 
-/* Hide separator on mobile */
 @media (max-width: 768px) {
   .nav-separator {
     display: none;
   }
 }
 
-/* Logout button styling */
 .logout-btn {
   background: transparent;
   border: none;
@@ -90,7 +85,6 @@
   color: #ff8888;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -107,33 +101,32 @@
   transition: 0.3s;
 }
 
-/* Arrow transformation */
 .hamburger.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger.active .bar:nth-child(2) {
-  opacity: 0; /* Hide middle bar */
+  opacity: 0;
 }
 
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 0; /* attach directly to navbar */
+    top: 0; 
     right: 0;
     background-color: #20232a;
     flex-direction: column;
-    align-items: flex-start;   /* ✅ push links to the left */
+    align-items: flex-start; 
     width: 200px;
     padding: 15px;
     display: none;
     border-radius: 8px;
-    margin-top: 50px; /* pushes it below navbar */
+    margin-top: 50px;
     z-index: 999;
     gap: 15px;
   }
@@ -146,12 +139,9 @@
     display: flex;
   }
 
-  /* Optional: horizontal separator between stacked items */
   .navbar-links a + a {
     border-top: 1px solid #333;
     padding-top: 10px;
-    width: 100%; /* ✅ full width clickable */
+    width: 100%; 
   }
 }
-
-
