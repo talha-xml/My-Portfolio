@@ -13,7 +13,6 @@ def contact():
     if not data:
         return jsonify({"error": "No input provided ⚠️"}), 400
 
-    # React sends "name", map it to DB column "full_name"
     full_name = data.get("name")
     email = data.get("email")
     message = data.get("message")
@@ -25,7 +24,6 @@ def contact():
         conn = psycopg2.connect(Config.DATABASE_URL)
         cur = conn.cursor()
 
-        # Insert into the correct table + column names
         cur.execute(
             """
             INSERT INTO contacts (full_name, email, message)
@@ -46,4 +44,3 @@ def contact():
     except Exception as e:
         print("Server Error:", e)
         return jsonify({"error": "Server error ⚠️"}), 500
-
